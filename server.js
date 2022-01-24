@@ -5,10 +5,12 @@ const cors = require("cors");
 app.use(
   cors({
     origin: "http://127.0.0.1:5500",
+    methods: ["GET", "POST", "PUT"],
+    credentials: true,
   })
 );
 
-app.get("/data", (req, res) => {
+app.put("/data", (req, res) => {
   res.json({ name: "Himanshu", favoirteFood: "Burger" });
 });
 
